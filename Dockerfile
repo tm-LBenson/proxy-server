@@ -1,5 +1,5 @@
 # Use the ARM-compatible Node.js base image for Raspberry Pi
-FROM arm32v7/node:14
+FROM arm64v8/node:14
 
 # Set the working directory in the container
 WORKDIR /usr/src/app
