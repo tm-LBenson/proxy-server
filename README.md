@@ -43,7 +43,7 @@ Copy code
 
 `node index.js`
 
-The server will start on port `3000` by default.
+The server will start on port `4242` by default.
 
 ## Usage
 
@@ -85,7 +85,7 @@ fetch(
 
 ```js
 fetch(
-  "http://localhost:3000/?target=" +
+  "http://localhost:4242/?target=" +
     encodeURIComponent("https://api.example.com/data"),
   {
     method: "POST",
@@ -108,15 +108,8 @@ fetch(
 
 You can configure the server using environment variables:
 
-- `PORT`: The port on which the server will listen (default is `3000`).
+- `PORT`: The port on which the server will listen (default is `4242`).
 
-### Allowed Hosts
-
-For security, it's recommended to restrict the proxy to only forward requests to specific target hosts.
-
-In `index.js`, define an array of allowed hosts:
-
-`const allowedHosts = ['https://favqs.com', 'https://api.example.com'];`
 
 Update the `router` function to check against the allowed hosts:
 
@@ -138,7 +131,7 @@ router: (req) => {
 
 ### Run the Docker Container
 
-`docker run -d -p 3000:3000 --name node-proxy-container node-proxy`
+`docker run -d -p 4242:4242 --name node-proxy-container node-proxy`
 
 ### Running on Raspberry Pi
 
