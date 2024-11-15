@@ -14,7 +14,6 @@ const proxyOptions = {
   changeOrigin: true,
   secure: false,
   onProxyReq: (proxyReq, req, res) => {
-
     if (req.body && Object.keys(req.body).length) {
       const bodyData = JSON.stringify(req.body);
 
@@ -25,7 +24,6 @@ const proxyOptions = {
     }
   },
   onProxyRes: (proxyRes, req, res) => {
-
     proxyRes.headers["Access-Control-Allow-Origin"] = "*";
   },
   router: (req) => {
@@ -44,7 +42,7 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: err.message });
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4242;
 app.listen(PORT, () => {
   console.log(`Proxy server is running on port ${PORT}`);
 });
